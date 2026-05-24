@@ -282,12 +282,8 @@
           <div class="absolute inset-0 bg-pink/20 rounded-full blur-3xl scale-110"></div>
 
           <!-- Bike visual -->
-          <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-brand-mid to-brand-card border border-pink/20 flex items-center justify-center glow-pink">
-            <div class="text-center">
-              <div class="text-8xl mb-2">🛵</div>
-              <div class="text-pink font-black text-2xl tracking-widest">KEREN</div>
-              <div class="text-gray-400 text-xs tracking-wider">ELECTRIC BIKE</div>
-            </div>
+          <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-pink/40 glow-pink shadow-2xl">
+            <img src="./bike-hero.jpg" alt="KEREN Electric Bike" class="w-full h-full object-cover object-center" loading="eager">
           </div>
 
           <!-- Floating badges -->
@@ -651,6 +647,42 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PHOTO GALLERY
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 px-6 bg-brand-mid">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center reveal mb-12">
+        <p class="text-pink text-sm font-semibold tracking-wider uppercase mb-3">Hình ảnh thực tế</p>
+        <h2 class="text-3xl md:text-4xl font-black">KEREN ngoài đời <span class="gradient-text">đẹp hơn ảnh</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 reveal">
+        <!-- Lifestyle photo -->
+        <div class="rounded-2xl overflow-hidden border border-pink/20 card-hover glow-pink-sm aspect-square">
+          <img src="./bike-lifestyle.jpg" alt="KEREN Lifestyle" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+
+        <!-- Promo photo -->
+        <div class="rounded-2xl overflow-hidden border border-pink/20 card-hover aspect-square" style="transition-delay:0.15s">
+          <img src="./bike-promo.png" alt="KEREN Promotion" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+
+        <!-- Specs photo -->
+        <div class="rounded-2xl overflow-hidden border border-pink/20 card-hover aspect-square" style="transition-delay:0.3s">
+          <img src="./bike-specs.png" alt="KEREN Specifications" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        </div>
+      </div>
+
+      <div class="text-center mt-10 reveal">
+        <a href="#contact" class="btn-pink text-white font-bold px-8 py-4 rounded-full text-base glow-pink-sm inline-block">
+          Đặt lịch xem xe trực tiếp →
+        </a>
       </div>
     </div>
   </section>
