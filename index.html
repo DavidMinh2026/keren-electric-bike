@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KEREN Electric Bike — Phong Cách. Tiết Kiệm. Tự Do.</title>
+  <meta name="description" content="Xe đạp điện KEREN — Thiết kế retro cá tính, pin 70km/sạc, chỉ 80.000đ/tháng tiền điện. Dành cho giới trẻ 16-30 tuổi yêu phong cách." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pink:    { DEFAULT: '#E91E8C', dark: '#C2176F', light: '#FF6BB3' },
+            brand:   { dark: '#0F172A', mid: '#1E293B', card: '#162032' },
+            orange:  { DEFAULT: '#FF6B35' },
+          },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { font-family: 'Be Vietnam Pro', sans-serif; }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #E91E8C 0%, #FF6B35 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Hero gradient background */
+    .hero-bg {
+      background: linear-gradient(135deg, #0F172A 0%, #1a0a2e 50%, #0F172A 100%);
+    }
+
+    /* Glow effects */
+    .glow-pink {
+      box-shadow: 0 0 40px rgba(233,30,140,0.4), 0 0 80px rgba(233,30,140,0.15);
+    }
+    .glow-pink-sm {
+      box-shadow: 0 0 20px rgba(233,30,140,0.3);
+    }
+
+    /* Pink button */
+    .btn-pink {
+      background: linear-gradient(135deg, #E91E8C, #C2176F);
+      transition: all 0.3s ease;
+    }
+    .btn-pink:hover {
+      background: linear-gradient(135deg, #FF6BB3, #E91E8C);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(233,30,140,0.5);
+    }
+
+    /* Card hover */
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(233,30,140,0.2);
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Navbar scrolled */
+    .navbar-scrolled {
+      background: rgba(15,23,42,0.98) !important;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+
+    /* FAQ */
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-answer.open {
+      max-height: 300px;
+    }
+
+    /* Floating badge */
+    .float-badge {
+      animation: floatUp 3s ease-in-out infinite;
+    }
+    .float-badge:nth-child(2) { animation-delay: 1s; }
+    .float-badge:nth-child(3) { animation-delay: 2s; }
+
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Pulse ring */
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid #E91E8C;
+      animation: pulseRing 2s ease-in-out infinite;
+    }
+    @keyframes pulseRing {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    /* Comparison table */
+    .check-yes { color: #10b981; font-size: 1.2rem; }
+    .check-no  { color: #ef4444; font-size: 1.2rem; }
+
+    /* Pricing card highlight */
+    .pricing-best {
+      border: 2px solid #E91E8C;
+      background: linear-gradient(180deg, #1E0A2E 0%, #162032 100%);
+      position: relative;
+    }
+    .pricing-best::before {
+      content: '🔥 BÁN CHẠY NHẤT';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #E91E8C, #FF6B35);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 4px 16px;
+      border-radius: 20px;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0F172A; }
+    ::-webkit-scrollbar-thumb { background: #E91E8C; border-radius: 3px; }
+
+    /* Section divider */
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #E91E8C, transparent);
+      margin: 0 auto;
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-white">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2">
+        <span class="text-2xl">🍓</span>
+        <div>
+          <div class="text-xl font-black tracking-widest gradient-text">KEREN</div>
+          <div class="text-[9px] text-gray-400 tracking-wider -mt-1">TRÁI DÂU STORE</div>
+        </div>
+      </a>
+
+      <!-- Nav Links (desktop) -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#features" class="hover:text-pink transition-colors">Tính năng</a>
+        <a href="#compare"  class="hover:text-pink transition-colors">So sánh</a>
+        <a href="#pricing"  class="hover:text-pink transition-colors">Bảng giá</a>
+        <a href="#contact"  class="hover:text-pink transition-colors">Liên hệ</a>
+      </div>
+
+      <!-- CTA -->
+      <a href="#contact" class="btn-pink text-white text-sm font-bold px-5 py-2.5 rounded-full hidden md:block">
+        🛵 Lái thử miễn phí
+      </a>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden text-white p-2" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-700 pt-4">
+      <div class="flex flex-col gap-4 text-sm font-medium text-gray-300 px-2">
+        <a href="#features" onclick="toggleMenu()" class="hover:text-pink">Tính năng</a>
+        <a href="#compare"  onclick="toggleMenu()" class="hover:text-pink">So sánh</a>
+        <a href="#pricing"  onclick="toggleMenu()" class="hover:text-pink">Bảng giá</a>
+        <a href="#contact"  onclick="toggleMenu()" class="hover:text-pink">Liên hệ</a>
+        <a href="#contact"  onclick="toggleMenu()" class="btn-pink text-white text-center font-bold px-5 py-2.5 rounded-full">
+          🛵 Lái thử miễn phí
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="hero-bg min-h-screen flex items-center relative overflow-hidden pt-20">
+    <!-- Background glow blobs -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-pink/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-orange/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center w-full">
+
+      <!-- Left: Text -->
+      <div class="reveal">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-pink/10 border border-pink/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 bg-pink rounded-full animate-pulse"></span>
+          <span class="text-pink text-xs font-semibold tracking-wider uppercase">Xe Đạp Điện Thế Hệ Mới</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl md:text-6xl font-black leading-tight mb-4">
+          Không chỉ là<br/>
+          chiếc xe.<br/>
+          <span class="gradient-text">Là phong cách.</span>
+        </h1>
+
+        <p class="text-gray-300 text-lg leading-relaxed mb-8 max-w-md">
+          KEREN — xe đạp điện retro dành cho thế hệ 16–30. Thiết kế cực chill, pin 70km/sạc, chỉ tốn <strong class="text-pink">80.000đ/tháng</strong> tiền điện.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#contact" class="btn-pink text-white font-bold px-8 py-4 rounded-full text-base glow-pink-sm">
+            🛵 Đặt lịch lái thử FREE
+          </a>
+          <a href="#features" class="border border-gray-600 text-gray-300 hover:border-pink hover:text-pink font-semibold px-8 py-4 rounded-full text-base transition-all">
+            Khám phá →
+          </a>
+        </div>
+
+        <!-- Social proof -->
+        <div class="flex items-center gap-3">
+          <div class="flex -space-x-2">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-pink to-orange flex items-center justify-center text-white text-xs font-bold border-2 border-brand-dark">LH</div>
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-xs font-bold border-2 border-brand-dark">MT</div>
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center text-white text-xs font-bold border-2 border-brand-dark">NA</div>
+            <div class="w-9 h-9 rounded-full bg-brand-mid flex items-center justify-center text-gray-400 text-xs font-bold border-2 border-brand-dark">+</div>
+          </div>
+          <div>
+            <div class="flex text-yellow-400 text-sm">★★★★★</div>
+            <p class="text-gray-400 text-xs">500+ bạn trẻ đã chọn KEREN</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Bike + Badges -->
+      <div class="relative flex justify-center items-center reveal" style="transition-delay:0.2s">
+        <!-- Bike placeholder (styled box) -->
+        <div class="relative">
+          <!-- Glow ring -->
+          <div class="absolute inset-0 bg-pink/20 rounded-full blur-3xl scale-110"></div>
+
+          <!-- Bike visual -->
+          <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-brand-mid to-brand-card border border-pink/20 flex items-center justify-center glow-pink">
+            <div class="text-center">
+              <div class="text-8xl mb-2">🛵</div>
+              <div class="text-pink font-black text-2xl tracking-widest">KEREN</div>
+              <div class="text-gray-400 text-xs tracking-wider">ELECTRIC BIKE</div>
+            </div>
+          </div>
+
+          <!-- Floating badges -->
+          <div class="absolute -top-4 -right-4 float-badge">
+            <div class="bg-brand-mid border border-pink/40 rounded-xl px-3 py-2 text-center glow-pink-sm">
+              <div class="text-xl">📱</div>
+              <div class="text-white text-xs font-bold">App Smart</div>
+              <div class="text-gray-400 text-[10px]">Điều khiển từ xa</div>
+            </div>
+          </div>
+
+          <div class="absolute top-1/2 -right-8 float-badge" style="animation-delay:1s">
+            <div class="bg-brand-mid border border-pink/40 rounded-xl px-3 py-2 text-center">
+              <div class="text-xl">⚡</div>
+              <div class="text-white text-xs font-bold">60–70km</div>
+              <div class="text-gray-400 text-[10px]">Mỗi lần sạc</div>
+            </div>
+          </div>
+
+          <div class="absolute -bottom-4 -left-4 float-badge" style="animation-delay:2s">
+            <div class="bg-brand-mid border border-green-500/40 rounded-xl px-3 py-2 text-center">
+              <div class="text-xl">💚</div>
+              <div class="text-green-400 text-xs font-bold">80K/tháng</div>
+              <div class="text-gray-400 text-[10px]">Tiền điện</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 animate-bounce">
+      <span class="text-xs tracking-wider">SCROLL</span>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STATS BAR
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="bg-gradient-to-r from-pink-dark via-pink to-pink-dark py-8 px-6">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <div class="text-3xl font-black text-white">500+</div>
+        <div class="text-pink-100 text-sm mt-1">Khách hàng tin dùng</div>
+      </div>
+      <div>
+        <div class="text-3xl font-black text-white">70km</div>
+        <div class="text-pink-100 text-sm mt-1">Hành trình/lần sạc</div>
+      </div>
+      <div>
+        <div class="text-3xl font-black text-white">80K</div>
+        <div class="text-pink-100 text-sm mt-1">Tiền điện/tháng</div>
+      </div>
+      <div>
+        <div class="text-3xl font-black text-white">12T</div>
+        <div class="text-pink-100 text-sm mt-1">Bảo hành chính hãng</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PAIN SECTION — Tại sao cần KEREN?
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 px-6 bg-brand-dark">
+    <div class="max-w-5xl mx-auto text-center reveal">
+      <p class="text-pink text-sm font-semibold tracking-wider uppercase mb-3">Sự thật không ai nói</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-4">
+        Bạn đang <span class="gradient-text">đốt tiền</span><br/>mỗi ngày mà không biết?
+      </h2>
+      <p class="text-gray-400 mb-12 max-w-xl mx-auto">So sánh thực tế chi phí đi lại hàng tháng — con số sẽ khiến bạn suy nghĩ lại</p>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <!-- Xe xăng -->
+        <div class="bg-red-950/30 border border-red-800/30 rounded-2xl p-6 card-hover">
+          <div class="text-4xl mb-3">⛽</div>
+          <h3 class="font-bold text-red-400 mb-4">Xe máy xăng</h3>
+          <div class="space-y-2 text-sm text-left">
+            <div class="flex justify-between"><span class="text-gray-400">Xăng/tháng</span><span class="text-red-400 font-bold">~500.000đ</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">Bảo dưỡng</span><span class="text-red-400 font-bold">~200.000đ</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">Đăng kiểm/năm</span><span class="text-red-400 font-bold">~500.000đ</span></div>
+            <div class="border-t border-red-800/30 pt-2 flex justify-between">
+              <span class="text-gray-300 font-semibold">Tổng/năm</span>
+              <span class="text-red-400 font-black text-lg">~9.500.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grab/taxi -->
+        <div class="bg-yellow-950/30 border border-yellow-700/30 rounded-2xl p-6 card-hover">
+          <div class="text-4xl mb-3">🚗</div>
+          <h3 class="font-bold text-yellow-400 mb-4">Gọi xe công nghệ</h3>
+          <div class="space-y-2 text-sm text-left">
+            <div class="flex justify-between"><span class="text-gray-400">30 chuyến/tháng</span><span class="text-yellow-400 font-bold">~900.000đ</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">Giờ cao điểm</span><span class="text-yellow-400 font-bold">+30-50%</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">Chờ xe mưa bão</span><span class="text-yellow-400 font-bold">Vô tận 😩</span></div>
+            <div class="border-t border-yellow-700/30 pt-2 flex justify-between">
+              <span class="text-gray-300 font-semibold">Tổng/năm</span>
+              <span class="text-yellow-400 font-black text-lg">~12.000.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- KEREN -->
+        <div class="bg-pink/5 border-2 border-pink/50 rounded-2xl p-6 card-hover glow-pink-sm">
+          <div class="text-4xl mb-3">🍓</div>
+          <h3 class="font-bold text-pink mb-4">KEREN Electric</h3>
+          <div class="space-y-2 text-sm text-left">
+            <div class="flex justify-between"><span class="text-gray-400">Tiền điện/tháng</span><span class="text-green-400 font-bold">~80.000đ</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">Bảo dưỡng</span><span class="text-green-400 font-bold">Gần như 0đ</span></div>
+            <div class="flex justify-between"><span class="text-gray-400">Bảo hành</span><span class="text-green-400 font-bold">12 tháng ✓</span></div>
+            <div class="border-t border-pink/30 pt-2 flex justify-between">
+              <span class="text-white font-semibold">Tổng/năm</span>
+              <span class="text-green-400 font-black text-lg">~960.000đ</span>
+            </div>
+          </div>
+          <div class="mt-3 bg-green-500/10 border border-green-500/30 rounded-lg px-3 py-2 text-center">
+            <span class="text-green-400 text-xs font-bold">🎉 Tiết kiệm hơn 16.000.000đ/năm!</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="btn-pink text-white font-bold px-8 py-4 rounded-full text-base inline-block">
+        Tôi muốn tiết kiệm ngay →
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FEATURES
+  ══════════════════════════════════════════════════════════════ -->
+  <section id="features" class="py-20 px-6 bg-brand-mid">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center reveal mb-16">
+        <div class="section-divider mb-6"></div>
+        <p class="text-pink text-sm font-semibold tracking-wider uppercase mb-3">Tính năng nổi bật</p>
+        <h2 class="text-3xl md:text-4xl font-black">Tất cả những gì bạn<br/><span class="gradient-text">cần ở một chiếc xe</span></h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="reveal bg-brand-card rounded-2xl p-6 card-hover border border-transparent hover:border-pink/30">
+          <div class="w-12 h-12 bg-pink/10 rounded-xl flex items-center justify-center text-2xl mb-4">📱</div>
+          <h3 class="font-bold text-lg mb-2">App Smart Control</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Kết nối smartphone, theo dõi tốc độ, quãng đường, khóa xe từ xa. Bao ngầu!</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="reveal bg-brand-card rounded-2xl p-6 card-hover border border-transparent hover:border-pink/30" style="transition-delay:0.1s">
+          <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center text-2xl mb-4">⚡</div>
+          <h3 class="font-bold text-lg mb-2">Pin 70km/sạc</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Đi cả tuần mới cần sạc. Pin lithium-ion cao cấp, sạc đầy trong 4 giờ đồng hồ.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="reveal bg-brand-card rounded-2xl p-6 card-hover border border-transparent hover:border-pink/30" style="transition-delay:0.2s">
+          <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-2xl mb-4">✨</div>
+          <h3 class="font-bold text-lg mb-2">Thiết kế Retro Chill</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Form xe cổ điển hiện đại, nhiều màu trendy. Đi đâu cũng được chụp ảnh tự nguyện.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="reveal bg-brand-card rounded-2xl p-6 card-hover border border-transparent hover:border-pink/30" style="transition-delay:0.1s">
+          <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center text-2xl mb-4">💰</div>
+          <h3 class="font-bold text-lg mb-2">Tiết kiệm 16tr/năm</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Chỉ 80K/tháng tiền điện. Số tiền tiết kiệm đủ để bạn đi du lịch 1-2 chuyến/năm.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="reveal bg-brand-card rounded-2xl p-6 card-hover border border-transparent hover:border-pink/30" style="transition-delay:0.2s">
+          <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-2xl mb-4">🛡️</div>
+          <h3 class="font-bold text-lg mb-2">Bảo hành 12 tháng</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Bảo hành toàn diện động cơ, pin, khung xe. Hỗ trợ kỹ thuật 24/7 qua Zalo/Hotline.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="reveal bg-brand-card rounded-2xl p-6 card-hover border border-transparent hover:border-pink/30" style="transition-delay:0.3s">
+          <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-2xl mb-4">💧</div>
+          <h3 class="font-bold text-lg mb-2">Chống nước IP54</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Trời mưa vẫn phi thoải mái. Chuẩn IP54 — chống bụi, chống nước, vượt mọi thời tiết.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HOW IT WORKS
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 px-6 bg-brand-dark">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <p class="text-pink text-sm font-semibold tracking-wider uppercase mb-3">Chỉ 3 bước</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-16">Từ ghé thăm đến<br/><span class="gradient-text">mang xe về nhà</span></h2>
+
+      <div class="grid md:grid-cols-3 gap-8 relative">
+        <!-- Line connector (desktop) -->
+        <div class="hidden md:block absolute top-10 left-1/6 right-1/6 h-0.5 bg-gradient-to-r from-pink via-orange to-pink opacity-30" style="left:16.67%;right:16.67%"></div>
+
+        <!-- Step 1 -->
+        <div class="flex flex-col items-center">
+          <div class="relative w-20 h-20 rounded-full bg-pink flex items-center justify-center text-3xl mb-4 pulse-ring glow-pink-sm z-10">
+            🏪
+          </div>
+          <div class="w-8 h-8 rounded-full bg-brand-mid border-2 border-pink text-pink font-black text-sm flex items-center justify-center mb-3">1</div>
+          <h3 class="font-bold text-lg mb-2">Ghé Showroom</h3>
+          <p class="text-gray-400 text-sm">Xem trực tiếp các mẫu KEREN. Ngắm, chụp ảnh, cầm lên tay trải nghiệm.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col items-center" style="transition-delay:0.15s">
+          <div class="relative w-20 h-20 rounded-full bg-gradient-to-br from-pink to-orange flex items-center justify-center text-3xl mb-4 z-10">
+            🛵
+          </div>
+          <div class="w-8 h-8 rounded-full bg-brand-mid border-2 border-orange text-orange font-black text-sm flex items-center justify-center mb-3">2</div>
+          <h3 class="font-bold text-lg mb-2">Lái Thử Miễn Phí</h3>
+          <p class="text-gray-400 text-sm">Test xe 100% free. Cảm nhận thực tế trước khi quyết định. Không ép mua.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col items-center" style="transition-delay:0.3s">
+          <div class="relative w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center text-3xl mb-4 z-10">
+            🏠
+          </div>
+          <div class="w-8 h-8 rounded-full bg-brand-mid border-2 border-green-500 text-green-400 font-black text-sm flex items-center justify-center mb-3">3</div>
+          <h3 class="font-bold text-lg mb-2">Mang Xe Về Nhà</h3>
+          <p class="text-gray-400 text-sm">Thanh toán linh hoạt, có trả góp 0% lãi suất. Giao xe tận nơi miễn phí HCM.</p>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <a href="#contact" class="btn-pink text-white font-bold px-8 py-4 rounded-full text-base inline-block">
+          📅 Đặt lịch ngay hôm nay
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       COMPARISON TABLE
+  ══════════════════════════════════════════════════════════════ -->
+  <section id="compare" class="py-20 px-6 bg-brand-mid">
+    <div class="max-w-4xl mx-auto reveal">
+      <div class="text-center mb-12">
+        <p class="text-pink text-sm font-semibold tracking-wider uppercase mb-3">So sánh trực tiếp</p>
+        <h2 class="text-3xl md:text-4xl font-black">KEREN vs <span class="gradient-text">Xe thường</span></h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-gray-700">
+              <th class="text-left py-4 px-4 text-gray-400 font-medium w-1/3">Tiêu chí</th>
+              <th class="text-center py-4 px-4 text-gray-400 font-medium">Xe xăng</th>
+              <th class="text-center py-4 px-4 font-bold w-1/3">
+                <span class="gradient-text">KEREN Electric</span>
+                <div class="text-xs text-pink font-normal mt-1">✦ Lựa chọn thông minh</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800">
+            <tr>
+              <td class="py-4 px-4 text-gray-300">💸 Chi phí nhiên liệu/tháng</td>
+              <td class="py-4 px-4 text-center text-red-400">500.000đ+</td>
+              <td class="py-4 px-4 text-center text-green-400 font-bold">~80.000đ ⚡</td>
+            </tr>
+            <tr class="bg-white/2">
+              <td class="py-4 px-4 text-gray-300">🔧 Bảo dưỡng định kỳ</td>
+              <td class="py-4 px-4 text-center text-red-400">200.000đ/tháng</td>
+              <td class="py-4 px-4 text-center text-green-400 font-bold">Gần như 0đ ✓</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 text-gray-300">🌿 Thân thiện môi trường</td>
+              <td class="py-4 px-4 text-center"><span class="check-no">✗</span></td>
+              <td class="py-4 px-4 text-center"><span class="check-yes">✓</span></td>
+            </tr>
+            <tr class="bg-white/2">
+              <td class="py-4 px-4 text-gray-300">📱 Kết nối ứng dụng</td>
+              <td class="py-4 px-4 text-center"><span class="check-no">✗</span></td>
+              <td class="py-4 px-4 text-center"><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 text-gray-300">📝 Cần bằng lái A1</td>
+              <td class="py-4 px-4 text-center text-orange-400">Bắt buộc</td>
+              <td class="py-4 px-4 text-center text-green-400 font-bold">Không cần ✓</td>
+            </tr>
+            <tr class="bg-white/2">
+              <td class="py-4 px-4 text-gray-300">✨ Phong cách / cá tính</td>
+              <td class="py-4 px-4 text-center text-gray-500">Bình thường</td>
+              <td class="py-4 px-4 text-center text-pink font-bold">Retro cực chill 🔥</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 text-gray-300">🏆 Phù hợp với giới trẻ</td>
+              <td class="py-4 px-4 text-center"><span class="check-no">✗</span></td>
+              <td class="py-4 px-4 text-center"><span class="check-yes">✓✓✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 px-6 bg-brand-dark">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center reveal mb-12">
+        <p class="text-pink text-sm font-semibold tracking-wider uppercase mb-3">Khách hàng nói gì?</p>
+        <h2 class="text-3xl md:text-4xl font-black">500+ bạn trẻ đã <span class="gradient-text">yêu KEREN</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div class="reveal bg-brand-card border border-gray-700 rounded-2xl p-6 card-hover">
+          <div class="flex text-yellow-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5">
+            "Mua KEREN được 3 tháng, tiết kiệm gần 1,5 triệu tiền xăng rồi. Xe đẹp lắm, đi học mấy bạn cứ hỏi xe hiệu gì 😍"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink to-orange flex items-center justify-center text-white text-sm font-bold">LH</div>
+            <div>
+              <div class="font-semibold text-sm">Linh Hương</div>
+              <div class="text-gray-500 text-xs">Sinh viên ĐH Kinh tế, 20 tuổi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="reveal bg-brand-card border border-pink/30 rounded-2xl p-6 card-hover" style="transition-delay:0.15s">
+          <div class="flex text-yellow-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5">
+            "App xe xịn thật sự. Khóa xe từ xa, xem tốc độ, pin còn bao nhiêu — tất cả trên điện thoại. Thấy mình như đang lái Tesla 🤣"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold">MT</div>
+            <div>
+              <div class="font-semibold text-sm">Minh Tuấn</div>
+              <div class="text-gray-500 text-xs">Freelancer, 24 tuổi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="reveal bg-brand-card border border-gray-700 rounded-2xl p-6 card-hover" style="transition-delay:0.3s">
+          <div class="flex text-yellow-400 mb-4 text-sm">★★★★★</div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5">
+            "Trời mưa vẫn đi bình thường, pin 70km là quá đủ cho mình đi làm cả tuần. Dịch vụ hậu mãi của Trái Dâu Store cũng rất chu đáo!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-400 flex items-center justify-center text-white text-sm font-bold">NA</div>
+            <div>
+              <div class="font-semibold text-sm">Ngọc Anh</div>
+              <div class="text-gray-500 text-xs">Nhân viên văn phòng, 27 tuổi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PRICING
+  ══════════════════════════════════════════════════════════════ -->
+  <section id="pricing" class="py-20 px-6 bg-brand-mid">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center reveal mb-16">
+        <p class="text-pink text-sm font-semibold tracking-wider uppercase mb-3">Bảng giá</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">Chọn model <span class="gradient-text">phù hợp với bạn</span></h2>
+        <p class="text-gray-400">Tất cả đều bao gồm bảo hành 12 tháng. Trả góp 0% lãi suất.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Classic -->
+        <div class="reveal bg-brand-card border border-gray-700 rounded-2xl p-8 card-hover">
+          <div class="text-3xl mb-3">🍓</div>
+          <h3 class="font-black text-xl mb-1">KEREN Classic</h3>
+          <p class="text-gray-400 text-sm mb-6">Phong cách retro cơ bản — đủ dùng, đủ cool</p>
+          <div class="mb-6">
+            <span class="text-4xl font-black text-white">22</span>
+            <span class="text-xl text-gray-400"> triệu</span>
+            <div class="text-gray-500 text-xs mt-1">hoặc từ 700K/tháng</div>
+          </div>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8">
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Pin 60km/sạc</li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Tốc độ tối đa 45km/h</li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> 3 màu sắc lựa chọn</li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Bảo hành 12 tháng</li>
+            <li class="flex items-center gap-2"><span class="text-gray-600">✗</span> <span class="text-gray-600">App Smart Control</span></li>
+            <li class="flex items-center gap-2"><span class="text-gray-600">✗</span> <span class="text-gray-600">Chống nước IP54</span></li>
+          </ul>
+          <a href="#contact" class="block text-center border border-pink text-pink hover:bg-pink hover:text-white font-bold px-6 py-3 rounded-full transition-all text-sm">
+            Chọn Classic
+          </a>
+        </div>
+
+        <!-- Pro (bestseller) -->
+        <div class="reveal pricing-best rounded-2xl p-8 card-hover" style="transition-delay:0.15s">
+          <div class="text-3xl mb-3">🍓🍓</div>
+          <h3 class="font-black text-xl mb-1">KEREN Pro</h3>
+          <p class="text-gray-400 text-sm mb-6">Đầy đủ tính năng — sự lựa chọn của 80% khách hàng</p>
+          <div class="mb-6">
+            <span class="text-4xl font-black text-white">25</span>
+            <span class="text-xl text-gray-400"> triệu</span>
+            <div class="text-gray-500 text-xs mt-1">hoặc từ 800K/tháng</div>
+          </div>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8">
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> <strong>Pin 70km/sạc</strong></li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Tốc độ tối đa 55km/h</li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> <strong>6 màu sắc trendy</strong></li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Bảo hành 12 tháng</li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> <strong>App Smart Control</strong></li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> <strong>Chống nước IP54</strong></li>
+          </ul>
+          <a href="#contact" class="btn-pink block text-center text-white font-bold px-6 py-3 rounded-full text-sm glow-pink-sm">
+            🔥 Chọn Pro — Phổ biến nhất
+          </a>
+        </div>
+
+        <!-- Elite -->
+        <div class="reveal bg-brand-card border border-gray-700 rounded-2xl p-8 card-hover" style="transition-delay:0.3s">
+          <div class="text-3xl mb-3">🍓🍓🍓</div>
+          <h3 class="font-black text-xl mb-1">KEREN Elite</h3>
+          <p class="text-gray-400 text-sm mb-6">Đỉnh cao — cho ai muốn best-of-the-best</p>
+          <div class="mb-6">
+            <span class="text-4xl font-black text-white">28</span>
+            <span class="text-xl text-gray-400"> triệu</span>
+            <div class="text-gray-500 text-xs mt-1">hoặc từ 900K/tháng</div>
+          </div>
+          <ul class="space-y-3 text-sm text-gray-300 mb-8">
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> <strong>Pin 80km/sạc</strong></li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Tốc độ tối đa 60km/h</li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> <strong>Limited edition colors</strong></li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> <strong>Bảo hành 18 tháng</strong></li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> App Smart Premium</li>
+            <li class="flex items-center gap-2"><span class="text-green-400">✓</span> <strong>Giao xe miễn phí toàn quốc</strong></li>
+          </ul>
+          <a href="#contact" class="block text-center border border-gray-600 text-gray-300 hover:border-pink hover:text-pink font-bold px-6 py-3 rounded-full transition-all text-sm">
+            Chọn Elite
+          </a>
+        </div>
+      </div>
+
+      <!-- Note -->
+      <p class="text-center text-gray-500 text-sm mt-8">
+        * Giá trên chưa bao gồm VAT. Hỗ trợ trả góp qua Momo, ngân hàng. Liên hệ để được tư vấn thêm.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 px-6 bg-brand-dark">
+    <div class="max-w-3xl mx-auto reveal">
+      <div class="text-center mb-12">
+        <p class="text-pink text-sm font-semibold tracking-wider uppercase mb-3">FAQ</p>
+        <h2 class="text-3xl md:text-4xl font-black">Câu hỏi <span class="gradient-text">thường gặp</span></h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="bg-brand-card border border-gray-700 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold hover:text-pink transition-colors" onclick="toggleFaq(this)">
+            <span>Xe đạp điện KEREN có cần bằng lái xe không?</span>
+            <svg class="w-5 h-5 transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+            <div class="pb-5">Không cần bằng lái! Xe đạp điện KEREN thuộc phân khúc tốc độ dưới 25km/h (chế độ thường), không yêu cầu bằng lái theo quy định hiện hành tại Việt Nam. Người từ 16 tuổi có thể đi ngay.</div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-brand-card border border-gray-700 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold hover:text-pink transition-colors" onclick="toggleFaq(this)">
+            <span>Sạc xe mất bao lâu? Sạc ở đâu?</span>
+            <svg class="w-5 h-5 transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+            <div class="pb-5">Sạc đầy mất khoảng 4-5 giờ. Cắm vào ổ điện thông thường 220V là được — không cần trạm sạc đặc biệt. Bạn có thể sạc tại nhà, trường học, văn phòng như sạc điện thoại.</div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-brand-card border border-gray-700 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold hover:text-pink transition-colors" onclick="toggleFaq(this)">
+            <span>Có hỗ trợ trả góp không?</span>
+            <svg class="w-5 h-5 transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+            <div class="pb-5">Có! Hỗ trợ trả góp 0% lãi suất qua các ngân hàng đối tác (VIB, HDBANK, TECHCOMBANK) và ví điện tử Momo. Tối thiểu trả trước 30%, phần còn lại chia đều 6-12 tháng.</div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-brand-card border border-gray-700 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold hover:text-pink transition-colors" onclick="toggleFaq(this)">
+            <span>Bảo hành như thế nào? Nếu hỏng hóc thì xử lý ra sao?</span>
+            <svg class="w-5 h-5 transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+            <div class="pb-5">Bảo hành 12 tháng toàn diện cho động cơ, bộ pin, khung sườn. Nếu có sự cố, liên hệ hotline/Zalo của Trái Dâu Store — chúng tôi cử kỹ thuật đến tận nơi hoặc thu xe về bảo dưỡng miễn phí trong khu vực TP.HCM.</div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bg-brand-card border border-gray-700 rounded-xl overflow-hidden">
+          <button class="faq-btn w-full flex items-center justify-between px-6 py-5 text-left font-semibold hover:text-pink transition-colors" onclick="toggleFaq(this)">
+            <span>Giao xe đến nhà được không? Phí giao hàng bao nhiêu?</span>
+            <svg class="w-5 h-5 transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="faq-answer px-6 text-gray-400 text-sm leading-relaxed">
+            <div class="pb-5">Giao xe miễn phí trong nội thành TP.HCM. Các tỉnh thành khác phụ phí vận chuyển từ 200K-500K (tùy khoảng cách). Model Elite giao xe miễn phí toàn quốc.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CONTACT FORM / CTA
+  ══════════════════════════════════════════════════════════════ -->
+  <section id="contact" class="py-20 px-6 bg-gradient-to-b from-brand-mid to-brand-dark">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center reveal mb-12">
+        <p class="text-pink text-sm font-semibold tracking-wider uppercase mb-3">Bắt đầu ngay hôm nay</p>
+        <h2 class="text-3xl md:text-4xl font-black mb-4">
+          Đăng ký <span class="gradient-text">lái thử miễn phí</span><br/>hoặc nhận tư vấn ngay
+        </h2>
+        <p class="text-gray-400">Điền thông tin bên dưới — đội ngũ Trái Dâu Store sẽ liên hệ trong vòng <strong class="text-white">15 phút</strong></p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 reveal">
+        <!-- Contact Info -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-bold text-xl mb-4">🍓 Trái Dâu Store</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Đại lý ủy quyền chính thức xe đạp điện KEREN tại TP.HCM. Cam kết giá tốt nhất, dịch vụ hậu mãi tận tâm.</p>
+          </div>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-pink/10 rounded-lg flex items-center justify-center text-lg flex-shrink-0">📍</div>
+              <div>
+                <div class="font-semibold text-sm mb-1">Showroom</div>
+                <div class="text-gray-400 text-sm">123 Đường ABC, Phường XYZ, Quận 7, TP. Hồ Chí Minh</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-pink/10 rounded-lg flex items-center justify-center text-lg flex-shrink-0">📞</div>
+              <div>
+                <div class="font-semibold text-sm mb-1">Hotline (8h-20h)</div>
+                <a href="tel:0901234567" class="text-pink font-bold text-lg hover:text-pink-light">0901 234 567</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-pink/10 rounded-lg flex items-center justify-center text-lg flex-shrink-0">💬</div>
+              <div>
+                <div class="font-semibold text-sm mb-1">Zalo / Messenger</div>
+                <div class="text-gray-400 text-sm">Chat ngay để được tư vấn nhanh nhất</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div class="pt-4 border-t border-gray-700">
+            <p class="text-gray-500 text-xs mb-3 uppercase tracking-wider">Theo dõi chúng tôi</p>
+            <div class="flex gap-3">
+              <a href="#" class="w-10 h-10 bg-blue-600/20 border border-blue-600/30 rounded-lg flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-all text-sm font-bold">f</a>
+              <a href="#" class="w-10 h-10 bg-pink/10 border border-pink/30 rounded-lg flex items-center justify-center text-pink hover:bg-pink hover:text-white transition-all text-sm">📷</a>
+              <a href="#" class="w-10 h-10 bg-gray-700/30 border border-gray-600/30 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gray-700 hover:text-white transition-all text-sm font-bold">T</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="bg-brand-card border border-gray-700 rounded-2xl p-8">
+          <form id="contactForm" onsubmit="handleSubmit(event)" class="space-y-5">
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-300">Họ và tên *</label>
+              <input type="text" required placeholder="Nguyễn Văn A"
+                class="w-full bg-brand-mid border border-gray-600 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-pink transition-colors" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-300">Số điện thoại *</label>
+              <input type="tel" required placeholder="0901 234 567"
+                class="w-full bg-brand-mid border border-gray-600 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-pink transition-colors" />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-300">Model quan tâm</label>
+              <select class="w-full bg-brand-mid border border-gray-600 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pink transition-colors">
+                <option value="" class="bg-brand-dark">Chọn model...</option>
+                <option value="classic" class="bg-brand-dark">KEREN Classic — 22 triệu</option>
+                <option value="pro" class="bg-brand-dark">KEREN Pro — 25 triệu 🔥</option>
+                <option value="elite" class="bg-brand-dark">KEREN Elite — 28 triệu</option>
+                <option value="consulting" class="bg-brand-dark">Chưa biết — cần tư vấn</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold mb-2 text-gray-300">Ghi chú (tùy chọn)</label>
+              <textarea rows="3" placeholder="Tôi muốn hỏi về trả góp / màu sắc / ..."
+                class="w-full bg-brand-mid border border-gray-600 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-pink transition-colors resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="btn-pink w-full text-white font-bold py-4 rounded-xl text-base glow-pink-sm">
+              🍓 Đăng ký tư vấn / Lái thử FREE
+            </button>
+
+            <p class="text-gray-500 text-xs text-center">Cam kết không spam. Thông tin của bạn được bảo mật 100%.</p>
+          </form>
+
+          <!-- Success message (hidden) -->
+          <div id="successMsg" class="hidden text-center py-8">
+            <div class="text-5xl mb-4">🎉</div>
+            <h3 class="text-xl font-bold text-white mb-2">Đăng ký thành công!</h3>
+            <p class="text-gray-400 text-sm">Trái Dâu Store sẽ liên hệ bạn trong vòng 15 phút.<br/>Cảm ơn bạn đã quan tâm đến KEREN!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════════ -->
+  <footer class="bg-black py-12 px-6 border-t border-gray-800">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-2xl">🍓</span>
+            <div>
+              <div class="text-xl font-black tracking-widest gradient-text">KEREN</div>
+              <div class="text-[9px] text-gray-500 tracking-wider -mt-1">TRÁI DÂU STORE</div>
+            </div>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-4 max-w-xs">
+            Đại lý xe đạp điện KEREN uy tín tại TP.HCM. Phong cách. Tiết kiệm. Tự do.
+          </p>
+          <div class="flex gap-3">
+            <a href="#" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-pink hover:text-white transition-all text-sm font-bold">f</a>
+            <a href="#" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-pink hover:text-white transition-all text-sm">📷</a>
+            <a href="#" class="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-pink hover:text-white transition-all text-sm font-bold">T</a>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-gray-300 uppercase tracking-wider">Khám phá</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li><a href="#features" class="hover:text-pink transition-colors">Tính năng</a></li>
+            <li><a href="#compare"  class="hover:text-pink transition-colors">So sánh xe</a></li>
+            <li><a href="#pricing"  class="hover:text-pink transition-colors">Bảng giá</a></li>
+            <li><a href="#contact"  class="hover:text-pink transition-colors">Lái thử miễn phí</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-bold text-sm mb-4 text-gray-300 uppercase tracking-wider">Liên hệ</h4>
+          <ul class="space-y-2 text-sm text-gray-500">
+            <li class="flex items-center gap-2">📞 <a href="tel:0901234567" class="hover:text-pink">0901 234 567</a></li>
+            <li class="flex items-center gap-2">✉️ <a href="mailto:contact@traidaustore.vn" class="hover:text-pink">contact@traidaustore.vn</a></li>
+            <li class="flex items-start gap-2">📍 <span>123 Đường ABC, Q.7, TP.HCM</span></li>
+            <li class="flex items-center gap-2">🕐 <span>8:00 – 20:00 (T2–CN)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+        <p>© 2025 Trái Dâu Store. Đại lý ủy quyền xe đạp điện KEREN.</p>
+        <p>Made with 🍓 for Vietnamese youth</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FLOATING CTAs
+  ══════════════════════════════════════════════════════════════ -->
+  <!-- Phone float -->
+  <a href="tel:0901234567" class="fixed bottom-24 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition-transform glow-pink-sm" title="Gọi ngay">
+    📞
+  </a>
+
+  <!-- Zalo float -->
+  <a href="#contact" class="fixed bottom-6 right-6 z-50 w-14 h-14 btn-pink rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition-transform glow-pink" title="Lái thử miễn phí">
+    🛵
+  </a>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════════════════════════ -->
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // FAQ toggle
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon   = btn.querySelector('.faq-icon');
+      const isOpen = answer.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
+
+      if (!isOpen) {
+        answer.classList.add('open');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Form submit handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('successMsg');
+      form.style.opacity = '0';
+      form.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        form.classList.add('hidden');
+        success.classList.remove('hidden');
+        success.style.animation = 'fadeIn 0.5s ease';
+      }, 400);
+    }
+  </script>
+</body>
+</html>
