@@ -919,36 +919,41 @@
         <!-- Form -->
         <div class="bg-brand-card border border-gray-700 rounded-2xl p-8">
           <form id="contactForm" onsubmit="handleSubmit(event)" class="space-y-5">
+            <!-- Web3Forms access key -->
+            <input type="hidden" name="access_key" value="a2c72301-a3f6-4000-b8ef-5ac982f9c236">
+            <input type="hidden" name="subject" value="🍓 Khách đăng ký lái thử KEREN mới!">
+            <input type="hidden" name="from_name" value="KEREN Landing Page">
+
             <div>
               <label class="block text-sm font-semibold mb-2 text-gray-300">Họ và tên *</label>
-              <input type="text" required placeholder="Nguyễn Văn A"
+              <input type="text" name="name" required placeholder="Nguyễn Văn A"
                 class="w-full bg-brand-mid border border-gray-600 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-pink transition-colors" />
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2 text-gray-300">Số điện thoại *</label>
-              <input type="tel" required placeholder="0901 234 567"
+              <input type="tel" name="phone" required placeholder="0901 234 567"
                 class="w-full bg-brand-mid border border-gray-600 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-pink transition-colors" />
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2 text-gray-300">Model quan tâm</label>
-              <select class="w-full bg-brand-mid border border-gray-600 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pink transition-colors">
+              <select name="model" class="w-full bg-brand-mid border border-gray-600 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-pink transition-colors">
                 <option value="" class="bg-brand-dark">Chọn model...</option>
-                <option value="classic" class="bg-brand-dark">KEREN Classic — 22 triệu</option>
-                <option value="pro" class="bg-brand-dark">KEREN Pro — 25 triệu 🔥</option>
-                <option value="elite" class="bg-brand-dark">KEREN Elite — 28 triệu</option>
-                <option value="consulting" class="bg-brand-dark">Chưa biết — cần tư vấn</option>
+                <option value="KEREN Classic — 22 triệu" class="bg-brand-dark">KEREN Classic — 22 triệu</option>
+                <option value="KEREN Pro — 25 triệu" class="bg-brand-dark">KEREN Pro — 25 triệu 🔥</option>
+                <option value="KEREN Elite — 28 triệu" class="bg-brand-dark">KEREN Elite — 28 triệu</option>
+                <option value="Chưa biết — cần tư vấn" class="bg-brand-dark">Chưa biết — cần tư vấn</option>
               </select>
             </div>
 
             <div>
               <label class="block text-sm font-semibold mb-2 text-gray-300">Ghi chú (tùy chọn)</label>
-              <textarea rows="3" placeholder="Tôi muốn hỏi về trả góp / màu sắc / ..."
+              <textarea name="message" rows="3" placeholder="Tôi muốn hỏi về trả góp / màu sắc / ..."
                 class="w-full bg-brand-mid border border-gray-600 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-pink transition-colors resize-none"></textarea>
             </div>
 
-            <button type="submit" class="btn-pink w-full text-white font-bold py-4 rounded-xl text-base glow-pink-sm">
+            <button type="submit" id="submitBtn" class="btn-pink w-full text-white font-bold py-4 rounded-xl text-base glow-pink-sm">
               🍓 Đăng ký tư vấn / Lái thử FREE
             </button>
 
@@ -1096,17 +1101,45 @@
     });
 
     // Form submit handler
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
       const form = document.getElementById('contactForm');
       const success = document.getElementById('successMsg');
-      form.style.opacity = '0';
-      form.style.transform = 'scale(0.95)';
-      setTimeout(() => {
-        form.classList.add('hidden');
-        success.classList.remove('hidden');
-        success.style.animation = 'fadeIn 0.5s ease';
-      }, 400);
+      const btn = document.getElementById('submitBtn');
+
+      // Show loading state
+      btn.disabled = true;
+      btn.textContent = '⏳ Đang gửi...';
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          form.style.opacity = '0';
+          form.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+            success.style.animation = 'fadeIn 0.5s ease';
+          }, 400);
+        } else {
+          alert('Có lỗi xảy ra. Vui lòng gọi hotline 0775 711 128 để được hỗ trợ!');
+          btn.disabled = false;
+          btn.textContent = '🍓 Đăng ký tư vấn / Lái thử FREE';
+        }
+      } catch (err) {
+        alert('Mất kết nối. Vui lòng thử lại hoặc gọi hotline 0775 711 128!');
+        btn.disabled = false;
+        btn.textContent = '🍓 Đăng ký tư vấn / Lái thử FREE';
+      }
     }
   </script>
 </body>
