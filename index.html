@@ -1123,10 +1123,10 @@
         const result = await res.json();
 
         if (result.success) {
-          // Also save to Google Sheets via GET (avoids CORS issue)
+          // Save to Google Sheets
           var sheetUrl = 'https://script.google.com/macros/s/AKfycbzLljul3zSjj26pRBb9Fdggd-R2A71_6NQbuG-SI1YrVY9NkseqJ5S7_dvKO9aFiibF/exec';
           var params = new URLSearchParams({ name: data.name||'', phone: data.phone||'', model: data.model||'', message: data.message||'' });
-          fetch(sheetUrl + '?' + params.toString(), { method: 'GET', mode: 'no-cors' }).catch(() => {});
+          fetch(sheetUrl + '?' + params.toString()).catch(() => {});
 
           form.style.opacity = '0';
           form.style.transform = 'scale(0.95)';
